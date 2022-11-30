@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+    height: 100px;
+    width: 100%;
+    
+  }
+  header {
+    padding: 40px;
+    text-align: center;
+    background: #55339f;
+    color: #fff;
+    
+    flex-wrap: wrap;
+  }  
+
+  #score{
+    padding: 20px;
+    text-align: center; 
+    background: cornflowerblue;
+    color: gold;
+    
+  }
+
+  .row{
+    display: flex;
+  }
+  .cell{
+    text-align: center;
+    }
+  /* .submit{
+    margin-left: 
+  } */
+  #team{
+    padding: 10px;
+    text-align: center;
+    width: 300%;
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    
+   
+  }
+
+  #match{
+    padding: 0px;
+    width: 50%;
+    float: right;
+    
+
+  }
+ 
