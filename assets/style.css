@@ -1,56 +1,91 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+
+body {
   
-  body {
-    font-family: Arial;
-    margin: 0;
-    height: 100px;
-    width: 100%;
-    
-  }
-  header {
-    padding: 40px;
-    text-align: center;
-    background: #55339f;
-    color: #fff;
-    
-    flex-wrap: wrap;
-  }  
-
-  #score{
-    padding: 20px;
-    text-align: center; 
-    background: cornflowerblue;
-    color: gold;
-    
-  }
-
-  .row{
-    display: flex;
-  }
-  .cell{
-    text-align: center;
-    }
-  /* .submit{
-    margin-left: 
-  } */
-  #team{
-    padding: 10px;
-    text-align: center;
-    width: 300%;
-    height: 50px;
-    font-weight: bold;
-    display: flex;
-    
-   
-  }
-
-  #match{
-    padding: 0px;
-    width: 50%;
-    float: right;
-    
-
-  }
+  font-family: Arial;
+  margin: 0;
+  height: 100px;
+  width: 100%;
+  
+}
+.header {
+  display: inline;
+  padding: 5px;
+  /* text-align: center; */
+  background: white;
+  color: blue;
+  height: 150px;
+  /* height: 150px; */
  
+  
+  flex-wrap: wrap;
+}  
+#logo{
+  float: left;
+}
+#header-text{
+float: right;
+padding-top: 40px;
+width: 85%;
+height: 120px;
+color: #004157;
+text-align: center;
+}
+#score{
+  padding: 0;
+  text-align: center; 
+  background: cornflowerblue;
+  color: gold;
+ 
+}
+#score-text{
+  margin-bottom: 0;
+}
+#input-box{
+  /* width: 70%; */
+}
+.content{
+  margin-top: 0;
+  background-image: url("./images/football-field.jpg") ;
+  height: 768px;
+}
+.picture-container{
+  margin-top: 10px;
+}
+/* #score-text{
+  width: 50%;
+}
+.menu{
+ width: 50%;
+ float: right;
+} */
+
+.row{
+  display: flex;
+}
+.cell{
+  text-align: center;
+  }
+/* .submit{
+  margin-left: 
+} */
+#team{
+  padding: 10px;
+  text-align: center;
+  width: 300%;
+  height: 50px;
+  font-weight: bold;
+  display: flex;
+  
+ 
+}
+
+#match{
+  padding: 0px;
+  width: 50%;
+  float: right;
+  
+
+}
