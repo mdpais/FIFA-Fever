@@ -46,10 +46,15 @@ text-align: center;
 #input-box{
   /* width: 70%; */
 }
-.content{
+.content, #content-2{
   margin-top: 0;
   background-image: url("./images/football-field.jpg") ;
+  background-size: cover;
+  background-position: center;
   height: 768px;
+}
+#content-2{
+  display: none;
 }
 .picture-container{
   margin-top: 10px;
