@@ -26,12 +26,12 @@ fetch(playersUrl)
     console.log(data);
   });
 
-  var matchesURL = 'https://api.football-data.org/v4/competitions/';
+  var matchesURL = 'https://cors-anywhere.herokuapp.com/https://api.football-data.org/v4/competitions/';
   $.ajax({
     url : matchesURL,
     headers: {
          'X-Auth-Token' : '029084d6415543dfa5a1b09a422cb71e',
-         'Access-Control-Allow-Origin' : 'https://mdpais.github.io/FIFA-Fever/'
+        //  'Access-Control-Allow-Origin' : 'https://api.football-data.org/'
     }});
 
   fetch(matchesURL)
