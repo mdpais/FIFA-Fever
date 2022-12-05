@@ -26,7 +26,7 @@ fetch(playersUrl)
     console.log(data);
   });
 
-  var matchesURL = 'https://api.football-data.org/v4/teams/86/matches?status=SCHEDULED';
+  var matchesURL = 'https://api.football-data.org/v4/competitions/';
   $.ajax({
     url : matchesURL,
     headers: {
