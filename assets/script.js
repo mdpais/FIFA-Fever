@@ -25,3 +25,18 @@ fetch(playersUrl)
   .then(function (data) {
     console.log(data);
   });
+
+  var matchesURL = 'https://api.football-data.org/v4/teams/86/matches?status=SCHEDULED';
+  $.ajax({
+    url : matchesURL,
+    headers: {
+         'X-Auth-Token' : '029084d6415543dfa5a1b09a422cb71e'
+    }});
+
+  fetch(matchesURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });
