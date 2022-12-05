@@ -26,15 +26,9 @@ fetch(playersUrl)
     console.log(data);
   });
 
-  var matchesURL = 'https://cors-anywhere.herokuapp.com/https://api.football-data.org/v4/competitions/';
-  $.ajax({
-    url : matchesURL,
-    headers: {
-         'X-Auth-Token' : '029084d6415543dfa5a1b09a422cb71e',
-        //  'Access-Control-Allow-Origin' : 'https://api.football-data.org/'
-    }});
+  var newURL = 'https://apiv3.apifootball.com/?action=get_teams&league_id=19&APIkey=APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
-  fetch(matchesURL)
+  fetch(newURL)
   .then(function (response) {
     return response.json();
   })
