@@ -30,7 +30,8 @@ fetch(playersUrl)
   $.ajax({
     url : matchesURL,
     headers: {
-         'X-Auth-Token' : '029084d6415543dfa5a1b09a422cb71e'
+         'X-Auth-Token' : '029084d6415543dfa5a1b09a422cb71e',
+         'Access-Control-Allow-Origin' : 'https://mdpais.github.io/FIFA-Fever/'
     }});
 
   fetch(matchesURL)
