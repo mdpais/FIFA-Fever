@@ -25,14 +25,22 @@ fetch(playersUrl)
 var standingsURL = "https://apiv3.apifootball.com/?action=get_standings&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1";
 var statisticURL = 'https://apiv3.apifootball.com/?action=get_statistics&match_id=86392&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
-fetch(standingsURL)
+function displayStandings(teamSelected) {
+  fetch(standingsURL)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
+    for (var i = 0; i < data.length; i++) {
+      if (teamSelected == data[i].team_name) {
+        console.log(data[i].team_name);
+        console.log(data[i].league_round);
+        console.log(data[i].overall_league_position);
+        console.log(data[i].away_league_position);
+      }}
   });
-
+}
 
 
 
@@ -53,6 +61,7 @@ function displayPlayers(event) {
     fetchPlayerDetails(teamSelected);
     videosEl.text("");
     showVideos(teamSelected);
+    displayStandings(teamSelected);
     // alert("working");
   }
 
@@ -97,7 +106,6 @@ function showVideos(teamSelected) {
   })
   .then(function (data) {
     for (var i = 0; i < 10; i++) {
-    console.log(data.items[i].id.videoId);
     var iframeEl = $("<iframe>");
     iframeEl.attr("id", "ytplayer");
     iframeEl.attr("type", "text/html");
