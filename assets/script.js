@@ -49,7 +49,9 @@ function displayPlayers(event) {
     var teamSelected = team.trim().charAt(0).toUpperCase() + team.slice(1);
 
     console.log(teamSelected);
+    imageContainer.text("");
     fetchPlayerDetails(teamSelected);
+    videosEl.text("");
     showVideos(teamSelected);
     // alert("working");
   }
