@@ -49,6 +49,7 @@ function displayPlayers(event) {
 
     console.log(teamSelected);
     fetchPlayerDetails(teamSelected);
+    showVideos(teamSelected);
     // alert("working");
   }
 
@@ -85,5 +86,18 @@ var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-secti
     });
 }
 
+function showVideos(teamSelected) {
+  var youtubeURL = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAkAFBRWHBPFD-SrUl3zqmdtQqSYrTSB_k&type=video&part=snippet&forUsername=@fifa&maxResults=10&q="+teamSelected;
+  
+  fetch(youtubeURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    for (var i = 0; i < 10; i++) {
+    console.log(data.items[i].id.videoId);
+    }
+  });
+}
 
 searchButton.on("click", displayPlayers);
