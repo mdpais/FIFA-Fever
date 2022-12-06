@@ -3,6 +3,7 @@ var searchButton = $(".submit");
 var bodyDisplay = $(".body-display");
 var playersEl = $("#content-2");
 var imageContainer = $(".image-container");
+var videosEl = $("#videos");
 
 var playersUrl = 'https://apiv3.apifootball.com/?action=get_teams&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
@@ -75,8 +76,7 @@ function fetchPlayerDetails(teamSelected) {
 var imageURL = playersDetails[j].player_image;
 var playerName = playersDetails[j].player_name;
 var playerType = playersDetails[j].player_type;
-var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
-
+  var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
 // var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
          imageContainer.append(eachPlayer);
 }
@@ -87,7 +87,7 @@ var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-secti
 }
 
 function showVideos(teamSelected) {
-  var youtubeURL = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAkAFBRWHBPFD-SrUl3zqmdtQqSYrTSB_k&type=video&part=snippet&forUsername=@fifa&maxResults=10&q="+teamSelected;
+  var youtubeURL = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAkAFBRWHBPFD-SrUl3zqmdtQqSYrTSB_k&type=video&part=snippet&maxResults=10&q=fifa "+teamSelected;
   
   fetch(youtubeURL)
   .then(function (response) {
@@ -96,6 +96,14 @@ function showVideos(teamSelected) {
   .then(function (data) {
     for (var i = 0; i < 10; i++) {
     console.log(data.items[i].id.videoId);
+    var iframeEl = $("<iframe>");
+    iframeEl.attr("id", "ytplayer");
+    iframeEl.attr("type", "text/html");
+    iframeEl.attr("width", "640");
+    iframeEl.attr("height", "360");
+    iframeEl.attr("src", "https://www.youtube.com/embed/"+data.items[i].id.videoId);
+    iframeEl.attr("frameborder", "0");
+    videosEl.append(iframeEl);
     }
   });
 }
