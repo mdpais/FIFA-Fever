@@ -70,8 +70,13 @@ function fetchPlayerDetails(teamSelected) {
           var playersDetails = data[i].players;
           for (var j = 0; j < playersDetails.length; j++) {
             // console.log(playersDetails[j].player_name);
+// var imageURL = playersDetails[j].player_image;
 var imageURL = playersDetails[j].player_image;
-var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
+var playerName = playersDetails[j].player_name;
+var playerType = playersDetails[j].player_type;
+var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
+
+// var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
          imageContainer.append(eachPlayer);
 }
 

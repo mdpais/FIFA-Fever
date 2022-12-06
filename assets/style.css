@@ -48,9 +48,9 @@ text-align: center;
 }
 .content, #content-2{
   margin-top: 0;
-  background-image: url("./images/football-field.jpg") ;
+  /* background-image: url("./images/football-field.jpg") ;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   height: 768px;
 }
 #content-2{
