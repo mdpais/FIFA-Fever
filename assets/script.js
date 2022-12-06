@@ -4,6 +4,8 @@ var bodyDisplay = $(".body-display");
 var playersEl = $("#content-2");
 var imageContainer = $(".image-container");
 var videosEl = $("#videos");
+var flagEl = $("#flag");
+var statsEl = $("#stats")
 
 var playersUrl = 'https://apiv3.apifootball.com/?action=get_teams&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
@@ -34,10 +36,23 @@ function displayStandings(teamSelected) {
     console.log(data);
     for (var i = 0; i < data.length; i++) {
       if (teamSelected == data[i].team_name) {
-        console.log(data[i].team_name);
-        console.log(data[i].league_round);
-        console.log(data[i].overall_league_position);
-        console.log(data[i].away_league_position);
+        var badge = $("<img>");
+        badge.attr("src", data[i].team_badge);
+        badge.attr("class", "work-feature-block-image");
+        flagEl.append(badge);
+        var countryName = $("<h2>");
+        countryName.text(data[i].team_name);
+        countryName.attr("class", "work-feature-block-header");
+        statsEl.append(countryName);
+        var groupName = $("<p>");
+        groupName.text(data[i].league_round);
+        statsEl.append(groupName);
+        var groupPosition = $("<p>");
+        groupPosition.text("Group Position: "+data[i].overall_league_position);
+        statsEl.append(groupPosition);
+        var overallPosition = $("<p>");
+        overallPosition.text("Overall Position: "+data[i].away_league_position);
+        statsEl.append(overallPosition);
       }}
   });
 }
