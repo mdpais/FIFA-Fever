@@ -4,6 +4,7 @@ var bodyDisplay = $(".body-display");
 var playersEl = $("#content-2");
 var imageContainer = $(".image-container");
 var videosEl = $("#videos");
+var standingsEl = $("#standings");
 var flagEl = $("#flag");
 var statsEl = $("#stats")
 
@@ -33,9 +34,9 @@ function displayStandings(teamSelected) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     for (var i = 0; i < data.length; i++) {
       if (teamSelected == data[i].team_name) {
+        standingsEl.attr("class", "work-feature-block row");
         var badge = $("<img>");
         badge.attr("src", data[i].team_badge);
         badge.attr("class", "work-feature-block-image");
@@ -76,7 +77,10 @@ function displayPlayers(event) {
     fetchPlayerDetails(teamSelected);
     videosEl.text("");
     showVideos(teamSelected);
+    flagEl.text("");
+    statsEl.text("");
     displayStandings(teamSelected);
+    inputEl.val("");
     // alert("working");
   }
 

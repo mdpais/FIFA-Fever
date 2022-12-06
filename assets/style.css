@@ -33,18 +33,10 @@ height: 120px;
 color: #004157;
 text-align: center;
 }
-#score{
-  padding: 0;
-  text-align: center; 
-  background: cornflowerblue;
-  color: gold;
- 
-}
-#score-text{
-  margin-bottom: 0;
-}
+
 #input-box{
-  /* width: 70%; */
+  margin: 10px;
+  /* margin-right: 10px; */
 }
 .content, #content-2{
   margin-top: 0;
@@ -92,15 +84,31 @@ text-align: center;
 }
 
 .work-feature-block {
-  padding: 10px 0;
+  padding: 10px;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
   width: 100%;
+  margin: 10px;
+  display: flex;
+  min-height: 350px;
+  align-items: center;
 }
 
 .work-feature-block-image {
   display: block;
   margin: auto;
   padding: 10px 0;
+  max-width: 350px;
 }
 
+#flag {
+  width: 50%;
+  align-items: center;  
+  display: inline-block;
+}
+
+#stats {
+  width: 50%;
+  align-items: center;
+  align-items: center;
+}
