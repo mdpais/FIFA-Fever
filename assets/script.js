@@ -21,10 +21,10 @@ fetch(playersUrl)
     //console.log(data[i].user.login);
   });
 //});
-
+var standingsURL = "https://apiv3.apifootball.com/?action=get_standings&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1";
 var statisticURL = 'https://apiv3.apifootball.com/?action=get_statistics&match_id=86392&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
-fetch(statisticURL)
+fetch(standingsURL)
   .then(function (response) {
     return response.json();
   })
@@ -32,7 +32,6 @@ fetch(statisticURL)
     console.log(data);
   });
 
-<<<<<<< HEAD
 
 
 
@@ -83,14 +82,3 @@ var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-secti
 
 
 searchButton.on("click", displayPlayers);
-=======
-  var newURL = 'https://apiv3.apifootball.com/?action=get_teams&league_id=19&APIkey=APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
-
-  fetch(newURL)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
->>>>>>> d55d5eaefbb14732942c9203afbe1699f3ef6955
