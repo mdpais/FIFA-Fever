@@ -6,7 +6,10 @@ var imageContainer = $(".image-container");
 var videosEl = $("#videos");
 var standingsEl = $("#standings");
 var flagEl = $("#flag");
-var statsEl = $("#stats")
+var statsEl = $("#stats");
+var teams = [];
+var teamsList = document.querySelector(".past-searches");
+var buttonsSection = document.querySelector(".team-buttons");
 
 var playersUrl = 'https://apiv3.apifootball.com/?action=get_teams&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
@@ -58,10 +61,7 @@ function displayStandings(teamSelected) {
   });
 }
 
-
-
 function displayPlayers(event) {
-  event.preventDefault();
   var team = inputEl.val();
   // alert(inputEl.val());
   if (team.trim() == "") {
@@ -109,9 +109,6 @@ var playerType = playersDetails[j].player_type;
   var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
 // var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
          imageContainer.append(eachPlayer);
-
-         //save searched team in local storage
-         localStorage.setItem('teamSelected', JSON.stringify(teamSelected));
 }
 
         }
@@ -140,4 +137,52 @@ function showVideos(teamSelected) {
   });
 }
 
-searchButton.on("click", displayPlayers);
+searchButton.on("click", function(event) {
+  event.preventDefault();
+  addTeam();
+  displayPlayers();
+});
+
+function renderTeams() {
+  buttonsSection.setAttribute("style", "display: block;");
+  teamsList.innerHTML = "";
+  for (var i = 0; i < teams.length; i++) {
+    var team = teams[i];
+    var button = document.createElement("button");
+    button.textContent = team;
+    button.setAttribute("class", "submit button");
+    teamsList.appendChild(button);
+  }
+}
+
+function init() {
+  var storedTeams = JSON.parse(localStorage.getItem("teams"));
+  if (storedTeams !== null) {
+      teams = storedTeams;
+  }
+  renderTeams();
+}
+
+function storeTeams() {
+  localStorage.setItem("teams", JSON.stringify(teams));
+}
+
+function addTeam() {
+  var teamText = inputEl.val();
+  if (teamText === "") {
+  return;
+  }
+  teams.push(teamText);
+  storeTeams();
+  renderTeams();
+};
+
+teamsList.addEventListener("click", function(event) {
+  var element = event.target;
+  if (element.matches("button") === true) {
+      inputEl.val(element.textContent);
+      displayPlayers();
+  }
+});
+
+init()
