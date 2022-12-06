@@ -105,6 +105,9 @@ var playerType = playersDetails[j].player_type;
   var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
 // var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
          imageContainer.append(eachPlayer);
+
+         //save searched team in local storage
+         localStorage.setItem('teamSelected', JSON.stringify(teamSelected));
 }
 
         }
