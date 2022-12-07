@@ -11,6 +11,11 @@ var teams = [];
 var teamsList = document.querySelector(".past-searches");
 var buttonsSection = document.querySelector(".team-buttons");
 
+function replaceImg(source){
+  source.src = "./assets/images/default-player-image.png";
+  source.onerror = "";
+  return true;
+}
 var playersUrl = 'https://apiv3.apifootball.com/?action=get_teams&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
 
 var apiURL = 'https://apiv3.apifootball.com/?action=get_statistics&match_id=86392&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
@@ -104,9 +109,14 @@ function fetchPlayerDetails(teamSelected) {
             // console.log(playersDetails[j].player_name);
 // var imageURL = playersDetails[j].player_image;
 var imageURL = playersDetails[j].player_image;
+// if (imageURL.player_image.error='404'){
+//   imageURL = "./assets/images/default-player-image.png";
+
+// }
+
 var playerName = playersDetails[j].player_name;
 var playerType = playersDetails[j].player_type;
-  var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
+  var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image' onerror='replaceImg(this)'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
 // var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
          imageContainer.append(eachPlayer);
 }
