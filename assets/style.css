@@ -1,5 +1,7 @@
+
 * {
   box-sizing: border-box;
+ 
   
 }
 
@@ -12,10 +14,11 @@ body {
   
 }
 .header {
-  display: inline;
+  display: flex;
   padding: 5px;
   /* text-align: center; */
-  background: white;
+  /* background: white; */
+ 
   color: blue;
   height: 150px;
   /* height: 150px; */
@@ -23,18 +26,30 @@ body {
   
   flex-wrap: wrap;
 }  
+
+/* #input-box{
+  width: 50%;
+  
+} */
+
 #logo{
-  float: left;
+ padding-left: 40px;
+ padding-top: 10px;
 }
 #header-text{
-float: right;
+/* float: right; */
+/* text-align: center; */
 padding-top: 40px;
-width: 85%;
+width: 100%;
 height: 120px;
+
 color: #004157;
 text-align: center;
 }
 
+#ytplayer{
+  padding-left: 10px;
+}
 #input-box{
   margin: 10px;
   /* margin-right: 10px; */
@@ -72,6 +87,10 @@ text-align: center;
   height: 50px;
   font-weight: bold;
   display: flex;
+  color:#004157 ;
+}
+.teams-text{
+  color:#004157;
 }
 
 #match{
@@ -89,6 +108,7 @@ text-align: center;
   display: flex;
   min-height: 350px;
   align-items: center;
+  color:#004157;
 }
 
 .work-feature-block-image {
@@ -97,6 +117,9 @@ text-align: center;
   padding: 10px 0;
   max-width: 350px;
 }
+/* #standings{
+  display: flex;
+} */
 
 #flag {
   width: 50%;
@@ -107,7 +130,7 @@ text-align: center;
 #stats {
   width: 50%;
   align-items: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .past-searches > button {
@@ -120,4 +143,5 @@ text-align: center;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
   margin: 10px;
+ 
 }

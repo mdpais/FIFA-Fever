@@ -75,7 +75,7 @@ function displayPlayers(event) {
   }
 
   if (team.trim() !== "") {
-    var teamSelected = team.trim().charAt(0).toUpperCase() + team.slice(1);
+    var teamSelected = team.trim().charAt(0).toUpperCase() + team.slice(1).toLowerCase();
 
     console.log(teamSelected);
     imageContainer.text("");
@@ -109,16 +109,11 @@ function fetchPlayerDetails(teamSelected) {
             // console.log(playersDetails[j].player_name);
 // var imageURL = playersDetails[j].player_image;
 var imageURL = playersDetails[j].player_image;
-// if (imageURL.player_image.error='404'){
-//   imageURL = "./assets/images/default-player-image.png";
-
-// }
 
 var playerName = playersDetails[j].player_name;
 var playerType = playersDetails[j].player_type;
-  var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image' onerror='replaceImg(this)'><div class='card-section small-6'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
-// var eachPlayer = $("<div class='cell small-3'><div class='card'><div='card-section small-3'><img src="+imageURL+ " alt='player image'></div></div></div>")
-         imageContainer.append(eachPlayer);
+  var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image' onerror='replaceImg(this)'><div class='card-section small-6 teams-text'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
+ imageContainer.append(eachPlayer);
 }
 
         }
@@ -138,10 +133,11 @@ function showVideos(teamSelected) {
     var iframeEl = $("<iframe>");
     iframeEl.attr("id", "ytplayer");
     iframeEl.attr("type", "text/html");
-    iframeEl.attr("width", "640");
-    iframeEl.attr("height", "360");
+    iframeEl.attr("width", "100%");
+    iframeEl.attr("height", "450");
     iframeEl.attr("src", "https://www.youtube.com/embed/"+data.items[i].id.videoId);
     iframeEl.attr("frameborder", "0");
+    // iframeEl.attr("allowfullscreen");
     videosEl.append(iframeEl);
     }
   });
