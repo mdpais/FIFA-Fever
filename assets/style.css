@@ -16,15 +16,14 @@ body {
 .header {
   display: flex;
   padding: 5px;
-<<<<<<< HEAD
   /* text-align: center; */
   /* background: white; */
  
-=======
-  background: white;
->>>>>>> a0682c65c9797a55e26bf1192277ebd85621bfba
   color: blue;
   height: 150px;
+  /* height: 150px; */
+ 
+  
   flex-wrap: wrap;
 }  
 
@@ -53,6 +52,14 @@ text-align: center;
 }
 #input-box{
   margin: 10px;
+  /* margin-right: 10px; */
+}
+.content, #content-2{
+  margin-top: 0;
+  /* background-image: url("./images/football-field.jpg") ;
+  background-size: cover;
+  background-position: center; */
+  height: 768px;
 }
 #content-2{
   display: none;
@@ -60,6 +67,13 @@ text-align: center;
 .picture-container{
   margin-top: 10px;
 }
+/* #score-text{
+  width: 50%;
+}
+.menu{
+ width: 50%;
+ float: right;
+} */
 
 .row{
   display: flex;

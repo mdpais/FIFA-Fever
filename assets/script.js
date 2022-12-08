@@ -129,7 +129,7 @@ function showVideos(teamSelected) {
     var iframeEl = $("<iframe>");
     iframeEl.attr("id", "ytplayer");
     iframeEl.attr("type", "text/html");
-    iframeEl.attr("width", "100%");
+    iframeEl.attr("width", "80%");
     iframeEl.attr("height", "450");
     iframeEl.attr("src", "https://www.youtube.com/embed/"+data.items[i].id.videoId);
     iframeEl.attr("frameborder", "0");
