@@ -1,7 +1,7 @@
 # FIFA-Fever
 
 ## Description
-The project objective is to pull different relevant information that is available from different websites into one webpage. Instead of visiting multiple websites, as a football (soccer - the REAL football) fan, the website will be a one-stop page for all the users information needs (pulling on data from two different websites/APIs). The website displays the standings of the user's favorite team, and provide information on players of the team, and display video clips of games played.
+The project objective is to pull different relevant information that is available from different websites into one webpage. Instead of visiting multiple websites, as a football (soccer - the REAL football) fan, the website will be a one-stop page for all the users information needs (pulling on data from two different websites/APIs). The website displays the standings of the user's favorite team, and provide information on players of the team, and displays video clips of games played.
 There were a couple of challenges with fetching data from the API but we found a way around it as a team. Using foundation framework for the first time was also a little challenging. We learnt how to replace error images pulled from API with a placeholder.
 
 ## Usage
@@ -9,7 +9,7 @@ The user clicks on the website url and is presented with an input box to search 
 
 ![alt text](./assets/images/Screenshot%202022-12-07%20173946.png)
 
-Deployed Website URL: 
+Deployed Website URL:
 
 ## Credits
 APIs used are
@@ -23,7 +23,7 @@ https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
 MIT License
 
 ## Collaborators
-Bamidele Talabi 
-Marie-dale Pais 
-Olubukola Abiona
+Bamidele Talabi,
+Marie-dale Pais,
+Olubukola Abiona,
 Oluwabusayo “Victoria” Arowosafe

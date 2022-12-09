@@ -11,6 +11,7 @@ var teams = [];
 var teamsList = document.querySelector(".past-searches");
 var buttonsSection = document.querySelector(".team-buttons");
 
+// function for error message
 function replaceImg(source){
   source.src = "./assets/images/default-player-image.png";
   source.onerror = "";
