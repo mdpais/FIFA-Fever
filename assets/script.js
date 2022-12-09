@@ -46,10 +46,6 @@ function displayStandings(teamSelected) {
         overallPosition.text("Overall Position: "+data[i].away_league_position);
         statsEl.append(overallPosition);
       }
-      else {
-        alert("Please check the name you entered and try again. (Tip: Not all countries qualified at the 2022 world cup.)");
-
-      }
     }
   });
 }
