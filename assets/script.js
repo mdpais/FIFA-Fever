@@ -16,19 +16,6 @@ function replaceImg(source){
   source.onerror = "";
   return true;
 }
-var playersUrl = 'https://apiv3.apifootball.com/?action=get_teams&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
-
-var apiURL = 'https://apiv3.apifootball.com/?action=get_statistics&match_id=86392&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
-var apiKey = '11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1';
-
-fetch(playersUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    
-  });
 
 var standingsURL = "https://apiv3.apifootball.com/?action=get_standings&league_id=28&APIkey=11c5aab5efe97256e5343fe4bb3dbb3cf1dff45f2c409325ed773837fcdd51d1";
 
@@ -58,13 +45,17 @@ function displayStandings(teamSelected) {
         var overallPosition = $("<p>");
         overallPosition.text("Overall Position: "+data[i].away_league_position);
         statsEl.append(overallPosition);
-      }}
+      }
+      else {
+        alert("Please check the name you entered and try again. (Tip: Not all countries qualified at the 2022 world cup.)");
+
+      }
+    }
   });
 }
 
 function displayPlayers(event) {
   var team = inputEl.val();
-  // alert(inputEl.val());
   if (team.trim() == "") {
     alert("Please enter the name of your favorite team");
     return;
@@ -73,7 +64,6 @@ function displayPlayers(event) {
   if (team.trim() !== "") {
     var teamSelected = team.trim().charAt(0).toUpperCase() + team.slice(1).toLowerCase();
 
-    console.log(teamSelected);
     imageContainer.text("");
     fetchPlayerDetails(teamSelected);
     videosEl.text("");
@@ -82,7 +72,6 @@ function displayPlayers(event) {
     statsEl.text("");
     displayStandings(teamSelected);
     inputEl.val("");
-    // alert("working");
   }
 
 }
@@ -96,14 +85,10 @@ function fetchPlayerDetails(teamSelected) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       for (var i = 0; i < data.length; i++) {
         if (teamSelected == data[i].team_name) {
-          // alert("yes");
           var playersDetails = data[i].players;
           for (var j = 0; j < playersDetails.length; j++) {
-            // console.log(playersDetails[j].player_name);
-// var imageURL = playersDetails[j].player_image;
 var imageURL = playersDetails[j].player_image;
 
 var playerName = playersDetails[j].player_name;
@@ -111,7 +96,6 @@ var playerType = playersDetails[j].player_type;
   var eachPlayer = $("<div class='cell small-6'><div class='card'><div='card-section small-6'><img src="+imageURL+ " alt='player image' onerror='replaceImg(this)'><div class='card-section small-6 teams-text'><h3>"+ playerName+"</h3><h4>"+ playerType+"</h4></div></div></div></div>");
  imageContainer.append(eachPlayer);
 }
-
         }
       }
     });
@@ -133,7 +117,6 @@ function showVideos(teamSelected) {
     iframeEl.attr("height", "450");
     iframeEl.attr("src", "https://www.youtube.com/embed/"+data.items[i].id.videoId);
     iframeEl.attr("frameborder", "0");
-    // iframeEl.attr("allowfullscreen");
     videosEl.append(iframeEl);
     }
   });

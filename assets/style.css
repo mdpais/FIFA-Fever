@@ -1,8 +1,6 @@
 
 * {
-  box-sizing: border-box;
- 
-  
+  box-sizing: border-box;  
 }
 
 body {
@@ -11,38 +9,25 @@ body {
   margin: 0;
   height: 100px;
   width: 100%;
-  
 }
+
 .header {
   display: flex;
   padding: 5px;
-  /* text-align: center; */
-  /* background: white; */
- 
   color: blue;
   height: 150px;
-  /* height: 150px; */
- 
-  
   flex-wrap: wrap;
 }  
-
-/* #input-box{
-  width: 50%;
-  
-} */
 
 #logo{
  padding-left: 40px;
  padding-top: 10px;
 }
+
 #header-text{
-/* float: right; */
-/* text-align: center; */
 padding-top: 40px;
 width: 100%;
 height: 120px;
-
 color: #004157;
 text-align: center;
 }
@@ -50,34 +35,28 @@ text-align: center;
 #ytplayer{
   padding-left: 10px;
 }
+
 #input-box{
   margin: 10px;
-  /* margin-right: 10px; */
 }
+
 .content, #content-2{
   margin-top: 0;
-  /* background-image: url("./images/football-field.jpg") ;
-  background-size: cover;
-  background-position: center; */
   height: 768px;
 }
+
 #content-2{
   display: none;
 }
+
 .picture-container{
   margin-top: 10px;
 }
-/* #score-text{
-  width: 50%;
-}
-.menu{
- width: 50%;
- float: right;
-} */
 
 .row{
   display: flex;
 }
+
 .cell{
   text-align: center;
   }
@@ -89,6 +68,7 @@ text-align: center;
   display: flex;
   color:#004157 ;
 }
+
 .teams-text{
   color:#004157;
 }
@@ -117,9 +97,6 @@ text-align: center;
   padding: 10px 0;
   max-width: 350px;
 }
-/* #standings{
-  display: flex;
-} */
 
 #flag {
   width: 50%;
@@ -130,7 +107,6 @@ text-align: center;
 #stats {
   width: 50%;
   align-items: center;
-  /* align-items: center; */
 }
 
 .past-searches > button {
@@ -143,5 +119,4 @@ text-align: center;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
   margin: 10px;
- 
 }
