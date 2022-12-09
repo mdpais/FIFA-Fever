@@ -9,7 +9,7 @@ The user clicks on the website url and is presented with an input box to search 
 
 ![alt text](./assets/images/Screenshot%202022-12-07%20173946.png)
 
-Deployed Website URL: 
+Deployed Website URL: https://mdpais.github.io/FIFA-Fever/
 
 ## Credits
 APIs used are
